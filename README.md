@@ -5,7 +5,7 @@
 https://github.com/BionicMatedorX/Note-Taker-HW-11
 
 # **Link to Deployed Heroku App:**
-https://dashboard.heroku.com/apps/note-taker-project-11-hw
+https://note-taker-project-11-hw.herokuapp.com/
 
 # **Description** 
 This project showcases to a user an application called Note Taker that can be used to write and save notes. This application uses an Express.js back end and saves and retrieve note data from a JSON file.
@@ -15,7 +15,7 @@ This project showcases to a user an application called Note Taker that can be us
 1. [Description](#Description)
 2. [Final Product Image](#Final-Product-Image)
 3. [User Story](#User-Story)
-4. [Initialization](#Contributing-Guidelines)
+4. [Initialization](#Initialization)
 5. [License](#License)
 6. [Questions](#Questions)
 
