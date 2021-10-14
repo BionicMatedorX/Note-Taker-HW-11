@@ -1,4 +1,5 @@
 {
+
   "name": "note-taker",
   "version": "1.0.0",
   "description": "Unit 11 homework",
@@ -15,5 +16,11 @@
   "homepage": "https://github.com/BionicMatedorX/Note-Taker-HW-11/#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BionicMatedorX/Note-Taker-HW-11/issues"
   }
+  
 }
