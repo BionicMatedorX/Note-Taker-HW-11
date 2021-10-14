@@ -92,11 +92,9 @@ app.delete("/api/notes/:id", function(req, res) {
 
         if (deleteId <= notes.length) {
 
-            // Method to remove an element from an array obtained from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-
             res.json(notes.splice(deleteId-1,1));
 
-            // Reassign the ids of all notes
+            // reassign the ids of all notes
 
             for (let i=0; i<notes.length; i++) {
 
