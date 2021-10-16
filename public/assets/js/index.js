@@ -30,6 +30,8 @@ const hide = (elem) => {
 
 let activeNote = {};
 
+//a function to get note
+
 const getNotes = () =>
 
   fetch("/api/notes", {
@@ -42,6 +44,8 @@ const getNotes = () =>
     },
   });
 
+//a funtion to save note
+
   const saveNote = (note) =>
     fetch ("/api/notes" , {
 
@@ -51,61 +55,65 @@ const getNotes = () =>
         "Content-Type": "application/json",
 
       },
+
+      body: JSON.stringify(note),
+
     });
 
-// A function for deleting a note from the db
+//a function for deleting a note
 
-var deleteNote = function(id) {
+const deleteNote = (id) =>
 
-  return $.ajax({
+    fetch(`/api/notes/${id}`, {
 
-    url: "api/notes/" + id,
-    method: "DELETE"
+      method: "DELETE",
+      headers: {
 
-  });
+        "Content-Type": "application/json",
+
+      },
+
+    });
+
+const renderActiveNote = () => {
+
+      hide(saveNoteBtn);
+    
+      if (activeNote.id) {
+
+        console.log(activeNote);
+
+        noteTitle.setAttribute('readonly', true);
+        noteText.setAttribute('readonly', true);
+        noteTitle.value = activeNote.title;
+        noteText.value = activeNote.text;
+        
+      } else {
+
+        noteTitle.removeAttribute('readonly');
+        noteText.removeAttribute('readonly');
+        noteTitle.value = '';
+        noteText.value = '';
+
+      }
+
 };
 
-// If there is an activeNote, display it, otherwise render empty inputs
+const workNoteSave = () => {
+  const newNote = {
 
-var renderActiveNote = function() {
-
-  $saveNoteBtn.hide();
-
-  if (activeNote.id) {
-
-    $noteTitle.attr("readonly", true);
-    $noteText.attr("readonly", true);
-    $noteTitle.val(activeNote.title);
-    $noteText.val(activeNote.text);
-
-  } else {
-
-    $noteTitle.attr("readonly", false);
-    $noteText.attr("readonly", false);
-    $noteTitle.val("");
-    $noteText.val("");
+    title: noteTitle.value,
+    text: noteText.value,
 
   }
 };
+saveNote(newNote).then (() => {
 
-// Get the note data from the inputs, save it to the db and update the view
+  getAndRenderNotes();
+  renderActiveNote();
 
-var handleNoteSave = function() {
+});
 
-  var newNote = {
-    
-    title: $noteTitle.val(),
-    text: $noteText.val()
-
-  };
-
-  saveNote(newNote).then(function(data) {
-
-    getAndRenderNotes();
-    renderActiveNote();
-
-  });
-};
 
 // Delete the clicked note
 
