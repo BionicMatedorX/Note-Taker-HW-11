@@ -1,12 +1,20 @@
-var $noteTitle = $(".note-title");
-var $noteText = $(".note-textarea");
-var $saveNoteBtn = $(".save-note");
-var $newNoteBtn = $(".new-note");
-var $noteList = $(".list-container .list-group");
+let noteList;
+let noteText;
+let noteTitle;
+let saveNoteBtn;
+let newNoteBtn;
 
-// activeNote is used to keep track of the note in the textarea
+//working on a new code
 
-var activeNote = {};
+if (window.location.pathname === "/notes") {
+
+  noteTitle = document.querySelector('.note-title');
+  noteText = document.querySelector('.note-textarea');
+  noteList = document.querySelector('list-container .list-group');
+  newNoteBtn = document.querySelector('.new-note');
+  saveNoteBtn = document.querySelector('save-note');
+
+}
 
 // A function for getting all notes from the db
 
