@@ -16,30 +16,42 @@ if (window.location.pathname === "/notes") {
 
 }
 
-// A function for getting all notes from the db
+const show = (elem) => {
+  
+  elem.style.display = "inline";
 
-var getNotes = function() {
-
-  return $.ajax({
-
-    url: "/api/notes",
-    method: "GET"
-
-  });
 };
 
-// A function for saving a note to the db
+const hide = (elem) => {
 
-var saveNote = function(note) {
+  elem.style.display = "none";
 
-  return $.ajax({
-
-    url: "/api/notes",
-    data: note,
-    method: "POST"
-
-  });
 };
+
+let activeNote = {};
+
+const getNotes = () =>
+
+  fetch("/api/notes", {
+
+    method: "GET", 
+    headers: {
+
+      "Content-Type": "application/json",
+
+    },
+  });
+
+  const saveNote = (note) =>
+    fetch ("/api/notes" , {
+
+      method: "POST" , 
+      headers: {
+
+        "Content-Type": "application/json",
+
+      },
+    });
 
 // A function for deleting a note from the db
 
