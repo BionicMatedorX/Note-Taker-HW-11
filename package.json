@@ -1,23 +1,20 @@
 {
+  
   "name": "note-taker",
   "version": "1.0.0",
   "description": "Unit 11 homework",
-  "main": "index.js",
+  "main": "server.js",
+
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BionicMatedorX/Note-Taker-HW-11.git"
-  },
-  "homepage": "https://github.com/BionicMatedorX/Note-Taker-HW-11/#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
+
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/BionicMatedorX/Note-Taker-HW-11/issues"
+  "dependencies": {
+    "express":"4.17.1"
+  },
+  "devDependencies": {
+    "nodemon":"2.0.13"
   }
 }

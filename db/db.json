@@ -1,7 +1,7 @@
 [
     {
-        "id": 1,
+        "id": 123,
         "title": "Example title",
-        "text": "Example note"
+        "text": "Example body"
     }
 ]
