@@ -105,21 +105,19 @@ const workNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
 
-  }
-};
+  };
+
 saveNote(newNote).then (() => {
 
   getAndRenderNotes();
   renderActiveNote();
 
 });
+};
 
+// deleting note
 
-// Delete the clicked note
-
-var handleNoteDelete = function(event) {
-
-  // prevents the click listener for the list from being called when the button inside of it is clicked
+var workNoteDelete = function(event) {
 
   event.stopPropagation();
 
