@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const database = require("/db.json");
+const database = require("./db.json");
 const uuid = require("./uniqueID/uuid");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -31,7 +31,7 @@ app.get("/", function (req, res) {
 
   app.get("/api/notes", (req, res) =>
 
-    fs.readFile(path.join(__dirname, "/db.json"), "utf-8", (err, data) => {
+    fs.readFile(path.join(__dirname, "./db.json"), "utf-8", (err, data) => {
 
       if (err) {
 
@@ -50,7 +50,7 @@ app.get("/", function (req, res) {
   app.post("/api/notes", (req, res) => {
 
 
-    fs.readFile(path.join(__dirname, "/db.json"), "utf-8", (err, data) => {
+    fs.readFile(path.join(__dirname, "./db.json"), "utf-8", (err, data) => {
 
       if (err) {
 
@@ -76,7 +76,7 @@ app.get("/", function (req, res) {
   
         fs.writeFileSync(
 
-          path.join(__dirname, "/db.json"),
+          path.join(__dirname, "./db.json"),
           JSON.stringify(notes, null, 2),
           "utf-8",
           (err) => {
